@@ -43,6 +43,7 @@ function Register() {
     <div className='flex text-center flex-col  bg-yellow-300'>
       <h1 className='text-center text-2xl font-extrabold'>Register</h1>
       <h1 className='text-center text-2xl'>Sign up now and begin collecting!</h1>
+      <h1 className='text-center text-2xl text-red-600'>SIGN FORM ONLY USES FIRST AND LAST NAME TO DISPLAY ON PAGE</h1>
       <form className='flex flex-col m-2' onSubmit={handleSubmit}>
         <label>
           First Name:

@@ -9,11 +9,11 @@ function Login() {
 
   const handleLogin = () => {
     let user = {
-      firstName: 'him',
-      lastName: 'himmy',
-      email: 'this@that.com',
+      firstName: 'Himmothy',
+      lastName: 'Himmerson',
+      email: 'him@him.himmy',
       password: '123',
-      member: 'this',
+      member: 'him',
       id: uuidv4(),
     };
 
@@ -31,7 +31,7 @@ function Login() {
       <h1 className='text-center text-2xl'>Where Fantasy Meets Reality - Unleash Your Imagination!</h1>
       </div>
       
-      <h1 className='text-center text-5xl mb-10 font-bold'>Login</h1>
+      <h1 className='text-center text-5xl mb-10 font-bold text-red-600'>Login - NO NEED TO ENTER ANYTHING DEFAULT ACCOUNT JUST CLICK "LOGIN"</h1>
       
       <div >
         <form className='flex flex-col' onSubmit={handleLogin}>

@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <AuthContextProvider>
-        <App className='bg-slate-400' />
+        <App />
         
       </AuthContextProvider>
     </Router>

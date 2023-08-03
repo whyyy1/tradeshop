@@ -8,7 +8,7 @@ function App() {
  
   return (
       <div className='bg-sa font-semibold flex flex-col h-screen justify-between '>
-      <AppNav/>
+      <AppNav />
       <footer className='bg-slate-300 bottom-0 text-center'>FOOTER</footer>
       </div>
       
