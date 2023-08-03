@@ -4,7 +4,7 @@ import Login from '../pages/AuthPages/Login'
 import Register from '../pages/AuthPages/Register'
 import About from '../pages/AuthPages/About'
 import { Routes, Route } from 'react-router-dom'
-import AuthNavBar from '../Navigation/authNavBar'
+import AuthNavBar from '../Navigation/AuthNavBar'
 
 
 function AuthStack() {
