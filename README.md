@@ -20,4 +20,4 @@
 
 ### Else the user is logged in the see the cards to get and their own collection
 
-
+### **Some Bugs** not all cards load for magic cards and when you are viewing the card in your collection and click it to pop up screen you still get hovering effects from the cards in the collection
