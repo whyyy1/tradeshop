@@ -1,5 +1,6 @@
 # T's Trade Shop
 ## This is a simple trade shop simulator that is pulling data from two api sources. 
+## Idea behind the app was classic card collection from favorite cards games and sets that you cant get.
 
 ## Apis
 [Pokemon Api](https://pokemontcg.io/)
@@ -8,16 +9,11 @@
 
 ## You can collect your favorite cards and interact with them
 
+![Demo](demo/Demo.gif)
 
 
-## To use simply fork 
-## npm i 
-## npm run dev 
-## In this repo you can find a simple template setup for a react web-app. 
+### The App is wrapped in a context container that checks the current user state. If the user is not logged in they then the auth screens... will be all they can see until they login. 
 
-### The App is wrapped in a context container that checks the current user state. If the user is not logged in they the the auth screens... 
-
-### Else the user is logged in the see the login pages 
+### Else the user is logged in the see the cards to get and their own collection
 
 
-#### The data can be manipulated however you want just be sure to use the right calls to the reducer
