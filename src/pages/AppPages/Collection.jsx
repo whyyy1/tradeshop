@@ -132,7 +132,7 @@ function Collection() {
                         <div className='flex-col p-5'>
                             <h1 className='text-l ml-5 '>Name: {cardClicked.name}</h1>
                             <h1 className='text-l ml-5'>Rarity: {cardClicked.data.rarity}</h1>
-                            <button onClick={()=>favCard(cardClicked)}>{cardClicked.favorite ? 'unFavorite' : 'favorite'}</button>
+                            {/* <button onClick={()=>favCard(cardClicked)}>{cardClicked.favorite ? 'unFavorite' : 'favorite'}</button> */}
                             
                         </div>
 

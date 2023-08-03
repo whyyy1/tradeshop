@@ -3,9 +3,9 @@ import PokeCards from '../../widgets/PokeCards'
 
 function PokePage() {
   return (
-    <div>
+    <>
         <PokeCards/>
-    </div>
+    </>
   )
 }
 

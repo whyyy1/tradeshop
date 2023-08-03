@@ -106,13 +106,13 @@ function PokeCards() {
       <h1>8 cards in each pack all random from that set</h1>
       <h1>Click add to collection to add to collection</h1>
       </div>
-      <div className='flex flex-col bg-red-500 rounded md:flex-row'>
-        <img className='mx-auto scale-50'
+      <div className='flex flex-col bg-red-500 rounded md:flex-row max-h-60'>
+        <img className='mx-auto scale-50 max-w-xl max-h-m'
           onClick={() => recurse()}
           src="https://1000logos.net/wp-content/uploads/2017/05/Pokemon-Logo-500x313.png"
           alt="Pokemon Logo"
         />
-        {cardPack.logo?<img className='mx-auto scale-50' src={cardPack.logo} alt="Pack Logo" />:<></>}
+        {cardPack.logo?<img className='mx-auto scale-50 max-w-xl max-h-m' src={cardPack.logo} alt="Pack Logo" />:<></>}
         
       </div>
       {packPicked ? <>
@@ -137,7 +137,7 @@ function PokeCards() {
             }
             }>
               Add to Collection
-            </button> : <button className='w-52 mb-2 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m- font-extrabold' onClick={() => recurse()} >Grab Card</button>}
+            </button> : <button className='w-52 mb-32 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m- font-extrabold' onClick={() => recurse()} >Grab Card</button>}
 
 
 
