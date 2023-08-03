@@ -7,7 +7,7 @@ function AuthNavBar() {
     const navigate = useNavigate()
 
     return (
-        <nav className="navbar">
+        <nav className="navbar z-50">
 
             <ul className="nav-links">
                 <input type="checkbox" id="checkbox_toggle" />

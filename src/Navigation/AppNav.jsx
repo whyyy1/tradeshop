@@ -9,7 +9,7 @@ function AppNav() {
   const { state, dispatch } = useAuthContext();
 
   return (
-    <Routes>
+    <Routes className='z-50'>
       {/* Render AuthStack when the user is not logged in */}
       {!state.user ? <Route path="/*" element={<AuthStack />} /> : null}
       {/* Render AppStack when the user is logged in */}

@@ -28,7 +28,7 @@ function Register() {
 
     
     params.user = userForm.id
-    let userAtt = '/home/' + params.user
+    let userAtt = '/' + params.user
 
     console.log(dispatch({ type: 'GET_USER', payload: state }))
     dispatch({ type: 'LOGIN', payload: userForm })
@@ -40,10 +40,10 @@ function Register() {
 
 
   return (
-    <div className='flex text-center flex-col m-20 bg-yellow-300'>
+    <div className='flex text-center flex-col  bg-yellow-300'>
       <h1 className='text-center text-2xl font-extrabold'>Register</h1>
       <h1 className='text-center text-2xl'>Sign up now and begin collecting!</h1>
-      <form className='flex flex-col m-10' onSubmit={handleSubmit}>
+      <form className='flex flex-col m-2' onSubmit={handleSubmit}>
         <label>
           First Name:
           <input className='mb-5 text-center border-primary border-2 rounded' type="text" name="firstName" value={userForm.firstName} onChange={handleChange} placeholder='First Name' />
@@ -80,7 +80,7 @@ function Register() {
             onChange={handleChange}
           />
         </label> */}
-        <input className='border-primary border-2 rounded ml-96 mr-96 mt-10' type="submit" value="Submit" />
+        <input className='border-primary border-2 rounded  mt-10' type="submit" value="Submit" />
       </form>
     </div>
   )

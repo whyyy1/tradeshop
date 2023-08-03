@@ -1,8 +1,9 @@
 import React from 'react'
+import ScrollTop from '../../widgets/ScrollTop'
 
 function Loading() {
   return (
-    <div className=' text-center p-16 font-extrabold m-10 border-primary border-8 bg-slate-200  '>
+    <div className=' text-center  font-extrabold  border-primary border-8 bg-slate-200  '>
       <div className='p-4 mb-32 border-primary border-2  bg-yellow-300 rounded'>
         <h1 className='text-center text-4xl'>T's Simulated Card Shop</h1>
         <h1 className='text-center text-2xl'>Where Fantasy Meets Reality - Unleash Your Imagination!</h1>
@@ -14,6 +15,7 @@ function Loading() {
         <h1 className='m-4 p-4 border-primary border-2'>Interact with the app and dive into the experience by creating a temporary account. Rest assured, your data remains secure, as nothing is stored beyond the confines of your own device (local storage).
 
           Get ready to immerse yourself in the excitement of building your card empire, where imagination knows no bounds!</h1>
+          
       </div>
 
     </div>

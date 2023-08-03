@@ -24,7 +24,7 @@ function AppStack() {
       <AppNavBar userId={userId} className='bg-slate-500' /> {/* Pass the userId to AppNavBar */}
       <Routes>
         {/* Remove the string concatenation, and use parameter syntax */}
-        <Route path="/home/:userId" element={<Home data={data} />} />
+        <Route path="/:userId" element={<Home data={data} />} />
         <Route path="/profile/:userId" element={<Profile data={data} />} />
         <Route path="/activity/:userId" element={<Activity data={data} />} />
         <Route path="/collection/:userId" element={<Collection data={data} />} />
@@ -32,6 +32,7 @@ function AppStack() {
         <Route path="/magiccards/:userId" element={<MagicPage data={data} />} />
         {/* <Route path="/yugiohcards/:userId" element={<YugiohPage data={data} />} /> */}
       </Routes>
+      
     </>
   );
 }

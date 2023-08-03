@@ -4,6 +4,7 @@ import Example from '../../widgets/PopUp'
 import ReactModal from 'react-modal';
 import { HeartIcon as hS } from '@heroicons/react/24/solid'
 import { HeartIcon as hO } from '@heroicons/react/24/outline'
+import ScrollTop from '../../widgets/ScrollTop';
 
 function Collection() {
     ReactModal.setAppElement('#root');
@@ -66,16 +67,16 @@ function Collection() {
         // console.log(cards)
     }, [state])
     return (
-        <div className='max-h-max flex flex-wrap flex-col bg-blue-300'>
+        <div className='-max flex flex-wrap flex-col bg-blue-300'>
 
-            <select className='text-center mt-4 mx-auto ' onChange={(e) => getCardCollection(e.target.value)}>
+            <select className='text-center mt-4 mb-8 mx-auto  ' onChange={(e) => getCardCollection(e.target.value)}>
                 {listOptions.map((list) => {
 
                     return (<option value={list}>{list}</option>)
 
                 })}
             </select>
-            <div className='flex flex-row flex-wrap m-5 bg-slate-50 rounded p-14'>
+            <div className='flex flex-row flex-wrap   bg-slate-50 rounded text-center'>
                 {cards.length > 0 ? cards.map((card) => {
 
                     return (
@@ -115,10 +116,10 @@ function Collection() {
 
 
                             </div>)
-                }) : <div className='flex flex-wrap m-40'>
+                }) : <div className='flex flex-wrap '>
                     <h1 className='text-5xl mb-24 '>Welcome to {state.user.firstName} {state.user.lastName}'s Collection </h1>
-                    <h1 className='text-2xl mb-5'>If you are seeing this go to the Cards section and open some packs!</h1>
-                    <h2 className='text-2xl mb-5'>Click on the options tabs above to select or specific collection</h2>
+                    <h1 className='text-2xl mb-5'>If you are seeing this go to the "Cards" section and open some packs!</h1>
+                    <h2 className='text-2xl mb-5'>Click on the options tabs above to select your specific collection</h2>
 
                 </div>}
                 <ReactModal className='w-90 absolute z-50  '
@@ -142,7 +143,7 @@ function Collection() {
 
                 </ReactModal>
             </div>
-
+            <ScrollTop/>
         </div>
     )
 }

@@ -10,7 +10,7 @@ function AppNavBar({ userId }) { // Receive userId as a prop
     const navigate = useNavigate()
     console.log(userId)
     return (
-        <nav className="navbar">
+        <nav className="navbar z-50">
 
             <ul className="nav-links">
                 {/* <!-- USING CHECKBOX HACK --> */}
@@ -19,7 +19,7 @@ function AppNavBar({ userId }) { // Receive userId as a prop
                 <div className='menu'>
 
                     <li>
-                        <a onClick={() => navigate(`/home/${userId}`)}>Home</a>
+                        <a onClick={() => navigate(`/${userId}`)}>Home</a>
 
                     </li>
                     <li>

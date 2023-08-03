@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import boosterSets from './boosterSets'
 import { useAuthContext } from '../Authorize/AuthContext'
+import ScrollTop from './ScrollTop'
 
 
 function MagicCards() {
@@ -86,7 +87,9 @@ function MagicCards() {
                 dispatch({ type: 'addToMagicCollection', payload: choosenPack });
                 setShowCards(prevShow => !prevShow);
                 setChoosenPack(null)
-            }}>Add to Collection</button> : <></>}
+            }}>Add to Collection</button>
+             : <></>}
+            
             <div className='flex flex-wrap justify-between m-5 mx-auto bg-slate-100'>
 
                 {showCards ? choosenPack.cards.map((card) => {
@@ -95,6 +98,7 @@ function MagicCards() {
                 }) : <></>}
 
             </div>
+            <ScrollTop/>
         </div>
     )
 }

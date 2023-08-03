@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import pokemon from 'pokemontcgsdk';
 import config from '../Authorize/config';
 import { useAuthContext } from '../Authorize/AuthContext';
+import ScrollTop from './ScrollTop';
 
 
 function PokeCards() {
@@ -100,8 +101,8 @@ function PokeCards() {
 
   return (
     // INFO Section 
-    <div className='w-screen h-screen text-center flex  flex-col text-2xl bg-neutral-700 font-semibold '>
-      <div className='bg-white mx-auto rounded p-5 '>
+    <div className='overflow-y-scroll w-screen h-screen text-center flex  flex-col text-2xl bg-neutral-700 font-semibold '>
+      <div className='bg-white mx-auto rounded p-2 '>
         <h1>Instructions are simple. The 3 buttons are for different eras of Pokémon packs.</h1>
         <h1>Select a pack, then proceed to open the pack by grabbing a card</h1>
         <h1>There are 8 cards in each pack, all randomly chosen from that set</h1>
@@ -109,40 +110,45 @@ function PokeCards() {
 
       </div>
       {/* CARD PACK SECTION */}
-      <div className='flex flex-col bg-red-500 rounded md:flex-row max-h-60 '>
-        <img className='mx-auto scale-50 max-w-xl max-h-m'
+      <div className='realtive flex flex-col bg-red-500 rounded'>
+        <img className='mx-auto scale-50 '
           onClick={() => recurse()}
           src="https://1000logos.net/wp-content/uploads/2017/05/Pokemon-Logo-500x313.png"
           alt="Pokemon Logo"
         />
-        {cardPack.logo ? <img className='mx-auto scale-50 max-w-xl max-h-m' src={cardPack.logo} alt="Pack Logo" /> : <></>}
 
       </div>
-      {/* BUTTONS FOR PACK SELECTION SECTION */}
-      {packPicked ? <>
+      <div>
+        {cardPack.logo ? <img className='mx-auto scale-50 h-60' src={cardPack.logo} alt="Pack Logo" /> : <></>}
+        {/* BUTTONS FOR PACK SELECTION SECTION */}
+        {packPicked ? <>
 
-      </> : <div className='flex flex-wrap justify-evenly '>
-        <h1 className='w-64 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-14 font-extrabold' onClick={() => getPack(0, 50)}>Beginning Sets</h1>
-        <h1 className='w-64 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-14 font-extrabold' onClick={() => getPack(51, 101)}>Middle Sets</h1>
-        <h1 className='w-64 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-14 font-extrabold' onClick={() => getPack(101, cardSet.length)}>Latest Sets</h1>
+        </> : <div className='flex overflow-x-scroll text-center justify-center  bg-slate-400 '>
+          <h1 className=' rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-4 font-extrabold' onClick={() => getPack(0, 50)}>Beginning Sets</h1>
+          <h1 className=' rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-4 font-extrabold' onClick={() => getPack(51, 101)}>Middle Sets</h1>
+          <h1 className=' rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-4 font-extrabold' onClick={() => getPack(101, cardSet.length)}>Latest Sets</h1>
 
-      </div>}
-      {/* GRAB CARDS AND ADD TO COLLECTION BUTTON */}
-      <h1 className='mx-auto bg-white rounded'>Total cards: {cardsOpened.length}/ 8</h1>
-      {cardsOpened.length >= 8 ?
-        <button className='w-100 mb-2 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-14 font-extrabold' onClick={() => {
-          cardPack['cards'] = cardsOpened
+        </div>}
+      </div>
+      <div className='m-8'>
+        {/* GRAB CARDS AND ADD TO COLLECTION BUTTON */}
+        <h1 className='mx-auto bg-white rounded'>Total cards: {cardsOpened.length}/ 8</h1>
+        {cardsOpened.length >= 8 ?
+          <button className='w-100 mb-2 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-14 font-extrabold' onClick={() => {
+            cardPack['cards'] = cardsOpened
 
 
-          dispatch({ type: 'addToPokemonCollection', payload: cardPack })
-          setCardsOpened([])
-          setCardPack([])
-          setPackPicked(prevPick => false)
-        }
-        }>
-          Add to Collection
-        </button> : <button className='w-52 mb-10 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m- font-extrabold' onClick={() => recurse()} >Grab Card</button>}
+            dispatch({ type: 'addToPokemonCollection', payload: cardPack })
+            setCardsOpened([])
+            setCardPack([])
+            setPackPicked(prevPick => false)
+          }
+          }>
+            Add to Collection
+          </button> : <button className='w-52 mb-10 rounded-lg bg-yellow-500 hover:cursor-pointer text-center  font-extrabold' onClick={() => recurse()} >Grab Card</button>}
 
+
+      </div>
 
       {/* ACTUAL CARDS OPENED IMAGES SECTION */}
       {cardPack.logo ? (
@@ -165,7 +171,7 @@ function PokeCards() {
       )}
 
 
-
+      <ScrollTop />
 
 
 

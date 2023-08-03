@@ -72,9 +72,7 @@ li {
     
 }
 
-.dropdown li+li {
-    margin-top: 10px;
-}
+
 
 .dropdown li {
     padding: 0.5em 1em;
