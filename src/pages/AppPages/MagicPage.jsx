@@ -3,7 +3,7 @@ import MagicCards from '../../widgets/MagicCards'
 
 function MagicPage() {
   return (
-    <div><MagicCards/></div>
+    <><MagicCards/></>
   )
 }
 

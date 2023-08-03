@@ -86,9 +86,9 @@ function Collection() {
                                     setCardClicked(prevCard => card)
                                 }} className='group w-40 cursor-pointer transform hover:scale-150 z-40' src={card.image} />
                                 <div className='group p-5 flex mt-15 relative mx-auto left-0'>
-                                    <p className='rounded w-80  hidden absolute group-hover:inline-block duration-100 left-0  mb-0 text-center bg-yellow-500 text-black font-semibold z-50'>Name: <strong> {card.data.name}</strong> </p>
+                                    <p className='rounded w-80  hidden absolute group-hover:inline-block duration-100 left-0  mb-0 text-center bg-yellow-500 text-black font-semibold z-40'>Name: <strong> {card.data.name}</strong> </p>
                                     {card.data.supertype !== 'Energy' ?
-                                        card.data.rules ? <p className='rounded w-80  hidden absolute group-hover:inline-block duration-100 left-0 top-10  mb-0 text-center bg-yellow-500 text-black font-semibold z-50' >Card Text: {card.data.rules[0]}</p> : <p className='w-80 opacity-0 group-hover:opacity-100 duration-100 absolute inset-x-72 top-1/2   justify-center items-end text-l bg-yellow-500  text-black font-semibold z-50' > Text: {card.data.originalText || card.data.attacks[0].name}</p> :
+                                        card.data.rules ? <p className='rounded w-80  hidden absolute group-hover:inline-block duration-100 left-0 top-10  mb-0 text-center bg-yellow-500 text-black font-semibold z-40' >Card Text: {card.data.rules[0]}</p> : <p className='w-80 opacity-0 group-hover:opacity-100 duration-100 absolute inset-x-72 top-1/2   justify-center items-end text-l bg-yellow-500  text-black font-semibold z-50' > Text: {card.data.originalText || card.data.attacks[0].name}</p> :
                                         <></>}
 
                                 </div>
@@ -121,7 +121,7 @@ function Collection() {
                     <h2 className='text-2xl mb-5'>Click on the options tabs above to select or specific collection</h2>
 
                 </div>}
-                <ReactModal className='w-90 m-40 '
+                <ReactModal className='w-90 absolute z-50  '
                     isOpen={isOpen}
                     contentLabel="Image Zoom"
                     onRequestClose={() => setIsOpen(false)}

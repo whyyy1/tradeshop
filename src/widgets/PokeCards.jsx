@@ -99,22 +99,26 @@ function PokeCards() {
   }, []);
 
   return (
-    <div className='max-h-max text-center container flex  flex-col text-2xl bg-neutral-700 font-semibold '>
+    // INFO Section 
+    <div className='w-screen h-screen text-center flex  flex-col text-2xl bg-neutral-700 font-semibold '>
       <div className='bg-white mx-auto rounded p-5 '>
-      <h1>Instructions are simple. The 3 buttons are for different eras of pokemon packs.</h1>
-      <h1>Select a pack then proceed to open pack by grabing a card</h1>
-      <h1>8 cards in each pack all random from that set</h1>
-      <h1>Click add to collection to add to collection</h1>
+        <h1>Instructions are simple. The 3 buttons are for different eras of Pokémon packs.</h1>
+        <h1>Select a pack, then proceed to open the pack by grabbing a card</h1>
+        <h1>There are 8 cards in each pack, all randomly chosen from that set</h1>
+        <h1>Click 'Add to Collection' to add to your collection</h1>
+
       </div>
-      <div className='flex flex-col bg-red-500 rounded md:flex-row max-h-60'>
+      {/* CARD PACK SECTION */}
+      <div className='flex flex-col bg-red-500 rounded md:flex-row max-h-60 '>
         <img className='mx-auto scale-50 max-w-xl max-h-m'
           onClick={() => recurse()}
           src="https://1000logos.net/wp-content/uploads/2017/05/Pokemon-Logo-500x313.png"
           alt="Pokemon Logo"
         />
-        {cardPack.logo?<img className='mx-auto scale-50 max-w-xl max-h-m' src={cardPack.logo} alt="Pack Logo" />:<></>}
-        
+        {cardPack.logo ? <img className='mx-auto scale-50 max-w-xl max-h-m' src={cardPack.logo} alt="Pack Logo" /> : <></>}
+
       </div>
+      {/* BUTTONS FOR PACK SELECTION SECTION */}
       {packPicked ? <>
 
       </> : <div className='flex flex-wrap justify-evenly '>
@@ -123,35 +127,35 @@ function PokeCards() {
         <h1 className='w-64 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-14 font-extrabold' onClick={() => getPack(101, cardSet.length)}>Latest Sets</h1>
 
       </div>}
-
+      {/* GRAB CARDS AND ADD TO COLLECTION BUTTON */}
       <h1 className='mx-auto bg-white rounded'>Total cards: {cardsOpened.length}/ 8</h1>
       {cardsOpened.length >= 8 ?
-            <button className='w-100 mb-2 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-14 font-extrabold' onClick={() => {
-              cardPack['cards'] = cardsOpened
+        <button className='w-100 mb-2 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m-14 font-extrabold' onClick={() => {
+          cardPack['cards'] = cardsOpened
 
 
-              dispatch({ type: 'addToPokemonCollection', payload: cardPack })
-              setCardsOpened([])
-              setCardPack([])
-              setPackPicked(prevPick => false)
-            }
-            }>
-              Add to Collection
-            </button> : <button className='w-52 mb-32 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m- font-extrabold' onClick={() => recurse()} >Grab Card</button>}
+          dispatch({ type: 'addToPokemonCollection', payload: cardPack })
+          setCardsOpened([])
+          setCardPack([])
+          setPackPicked(prevPick => false)
+        }
+        }>
+          Add to Collection
+        </button> : <button className='w-52 mb-10 rounded-lg bg-yellow-500 hover:cursor-pointer text-center m- font-extrabold' onClick={() => recurse()} >Grab Card</button>}
 
 
-
+      {/* ACTUAL CARDS OPENED IMAGES SECTION */}
       {cardPack.logo ? (
         <div
           className='flex flex-col '>
-            <div className='flex flex-row flex-wrap bg-slate-400 rounded'>
-        {cardsOpened.map((card, index) => (
+          <div className='flex flex-row flex-wrap bg-slate-400 rounded'>
+            {cardsOpened.map((card, index) => (
 
-          <img className='w-32 z-0 scale-95 m-4 text-center transform hover:scale-150 hover:z-10 ' key={index} src={card.images.small} alt={`Card ${index + 1}`} />
+              <img className='w-32 z-0 scale-95 m-4 text-center transform hover:scale-150 hover:z-10 ' key={index} src={card.images.small} alt={`Card ${index + 1}`} />
 
-        ))}
-      </div>
-          
+            ))}
+          </div>
+
 
 
         </div>
@@ -159,7 +163,7 @@ function PokeCards() {
       ) : (
         <></>
       )}
-      
+
 
 
 
