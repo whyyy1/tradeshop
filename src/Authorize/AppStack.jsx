@@ -2,8 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AppNavBar from '../Navigation/AppNavBar';
 import Home from '../pages/AppPages/Home';
-import Profile from '../pages/AppPages/Profile';
-import Activity from '../pages/AppPages/Activity';
+
+
 import { useAuthContext } from './AuthContext';
 import Collection from '../pages/AppPages/Collection';
 import PokePage from '../pages/AppPages/PokePage';
@@ -25,8 +25,8 @@ function AppStack() {
       <Routes>
         {/* Remove the string concatenation, and use parameter syntax */}
         <Route path="/:userId" element={<Home data={data} />} />
-        <Route path="/profile/:userId" element={<Profile data={data} />} />
-        <Route path="/activity/:userId" element={<Activity data={data} />} />
+        
+        
         <Route path="/collection/:userId" element={<Collection data={data} />} />
         <Route path="/pokemoncards/:userId" element={<PokePage data={data} />} />
         <Route path="/magiccards/:userId" element={<MagicPage data={data} />} />
