@@ -76,7 +76,7 @@ function Collection() {
 
                 })}
             </select>
-            <div className='flex flex-row flex-wrap   bg-slate-50 rounded text-center'>
+            <div className='flex flex-row flex-wrap pl-10  bg-slate-50 rounded text-center'>
                 {cards.length > 0 ? cards.map((card) => {
 
                     return (
@@ -122,7 +122,7 @@ function Collection() {
                     <h2 className='text-2xl mb-5'>Click on the options tabs above to select your specific collection</h2>
 
                 </div>}
-                <ReactModal className='w-90 absolute z-50  '
+                <ReactModal className='w-90 absolute z-50 mx-auto top-  '
                     isOpen={isOpen}
                     contentLabel="Image Zoom"
                     onRequestClose={() => setIsOpen(false)}
