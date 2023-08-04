@@ -1,4 +1,4 @@
-# T's Trade Shop
+# [T's Trade Shop] (https://tstradeshop.netlify.app/)
 
 ### Imagine the joy of amassing your cherished TCG cards without the burden of financial constraints. Introducing a delightful project crafted by myself - a virtual realm where you, as a registered user, can embark on the journey of opening and gathering cards to your heart's content. Step into a world where your collection knows no bounds. Seamlessly integrated and intuitively designed, this API-powered creation empowers you to curate a personal treasury of cards. Dare to dream, create, and collect – the choice is yours. Your gateway to a boundless collection awaits!
 
