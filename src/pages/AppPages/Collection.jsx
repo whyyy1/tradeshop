@@ -67,7 +67,7 @@ function Collection() {
         // console.log(cards)
     }, [state])
     return (
-        <div className='-max flex flex-wrap flex-col bg-blue-300'>
+        <div className=' flex flex-wrap flex-col bg-blue-300'>
 
             <select className='text-center mt-4 mb-8 mx-auto  ' onChange={(e) => getCardCollection(e.target.value)}>
                 {listOptions.map((list) => {
