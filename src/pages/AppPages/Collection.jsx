@@ -122,7 +122,7 @@ function Collection() {
                     <h2 className='text-2xl mb-5'>Click on the options tabs above to select your specific collection</h2>
 
                 </div>}
-                <ReactModal className='w-90 absolute z-50 mx-auto top-  '
+                <ReactModal className='w-90 absolute z-50 mx-auto top-32  '
                     isOpen={isOpen}
                     contentLabel="Image Zoom"
                     onRequestClose={() => setIsOpen(false)}
